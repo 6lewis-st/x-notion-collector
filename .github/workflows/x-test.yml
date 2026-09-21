@@ -1,0 +1,18 @@
+name: X Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-x:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install x-cli
+        run: |
+          curl -L https://github.com/tamnd/x-cli/releases/download/v0.5.0/x_0.5.0_amd64.deb -o x.deb
+          sudo apt-get install -y ./x.deb
+
+      - name: Get SixTONES posts
+        run: |
+          x timeline SixTONES_SME -n 5 -o jsonl
