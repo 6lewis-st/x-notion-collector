@@ -17,6 +17,11 @@ jobs:
         run: |
           x timeline SixTONES_SME -n 20 --guest -o jsonl > posts.jsonl
 
+      - name: Check timeline help
+        run: |
+          x timeline --help
+
+
       - name: Show dates
         run: |
           grep -o '"created_at":"[^"]*"' posts.jsonl | head -20
