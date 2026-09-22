@@ -15,4 +15,5 @@ jobs:
 
       - name: Get SixTONES posts
         run: |
-          x timeline SixTONES_SME -n 5 -o jsonl
+          x timeline SixTONES_SME -n 20 -o jsonl --guest
+
